@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/creativechain/crea-js#readme",
   "dependencies": {
-    "@creativechain/rpc-auth": "^1.1.0",
+    "@steemit/rpc-auth": "^1.1.0",
     "bigi": "^1.4.2",
     "bluebird": "^3.4.6",
     "browserify-aes": "^1.0.6",
