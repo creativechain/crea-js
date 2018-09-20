@@ -2,7 +2,7 @@ import fetch from 'cross-fetch';
 import newDebug from 'debug';
 import Transport from './base';
 
-const debug = newDebug('steem:http');
+const debug = newDebug('crea:http');
 
 class RPCError extends Error {
   constructor(rpcError) {

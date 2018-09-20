@@ -13,7 +13,7 @@ if (isNode) {
   throw new Error("Couldn't decide on a `WebSocket` class");
 }
 
-const debug = newDebug('steem:ws');
+const debug = newDebug('crea:ws');
 
 export default class WsTransport extends Transport {
   constructor(options = {}) {
@@ -29,12 +29,12 @@ export default class WsTransport extends Transport {
     if (this.startPromise) {
       return this.startPromise;
     }
- 
+
     this.startPromise = new Promise((resolve, reject) => {
       this.ws = new WebSocket(this.options.websocket);
       this.ws.onerror = (err) => {
         this.startPromise = null;
-        reject(err);        
+        reject(err);
       };
       this.ws.onopen = () => {
         this.isOpen = true;
@@ -43,7 +43,7 @@ export default class WsTransport extends Transport {
         this.ws.onclose = this.onClose.bind(this);
         resolve();
       };
-    }); 
+    });
     return this.startPromise;
   }
 
@@ -87,7 +87,7 @@ export default class WsTransport extends Transport {
           id: data.id || this.id++,
           method: 'call',
           jsonrpc: '2.0',
-          params: [api, data.method, data.params]        
+          params: [api, data.method, data.params]
         }
       };
       this.inFlight++;

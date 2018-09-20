@@ -6,18 +6,18 @@
 </head>
 <body>
 
-<script src="../dist/steem.min.js"></script>
+<script src="../dist/crea.min.js"></script>
 <script>
   /** Configure your account */
   var username = 'guest123';
   var postingWif = '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
 
   /** Broadcast a vote */
-  steem.broadcast.vote(
+  crea.broadcast.vote(
     postingWif,
     username, // Voter
     'firepower', // Author
-    'steemit-veni-vidi-vici-steemfest-2016-together-we-made-it-happen-thank-you-steemians', // Permlink
+    'creativechain-veni-vidi-vici-creafest-2016-together-we-made-it-happen-thank-you-creaians', // Permlink
     10000, // Weight (10000 = 100%)
     function(err, result) {
       console.log(err, result);
@@ -27,7 +27,7 @@
   /** Broadcast a comment */
   var permlink = new Date().toISOString().replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
 
-  steem.broadcast.comment(
+  crea.broadcast.comment(
     postingWif,
     'siol', // Parent Author
     'test', // Parent Permlink
@@ -35,7 +35,7 @@
     permlink, // Permlink
     '', // Title
     'This is a test!', // Body
-    { tags: ['test'], app: 'steemjs/examples' }, // Json Metadata
+    { tags: ['test'], app: 'creajs/examples' }, // Json Metadata
     function(err, result) {
       console.log(err, result);
     }
@@ -44,7 +44,7 @@
   /** Broadcast a post */
   var permlink = new Date().toISOString().replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
 
-  steem.broadcast.comment(
+  crea.broadcast.comment(
     postingWif,
     '', // Leave parent author empty
     'photography', // Main tag
@@ -52,7 +52,7 @@
     permlink + '-post', // Permlink
     'This is just a test!', // Title
     'Nothing to see here', // Body
-    { tags: ['test'], app: 'steemjs/examples' }, // Json Metadata
+    { tags: ['test'], app: 'creajs/examples' }, // Json Metadata
     function(err, result) {
       console.log(err, result);
     }
@@ -60,7 +60,7 @@
 
   /** Follow an user */
   var follower = username; // Your username
-  var following = 'steemjs'; // User to follow
+  var following = 'creajs'; // User to follow
 
   var json = JSON.stringify(
     ['follow', {
@@ -70,7 +70,7 @@
     }]
   );
 
-  steem.broadcast.customJson(
+  crea.broadcast.customJson(
     postingWif,
     [], // Required_auths
     [follower], // Required Posting Auths
@@ -90,7 +90,7 @@
     }]
   );
 
-  steem.broadcast.customJson(
+  crea.broadcast.customJson(
     postingWif,
     [], // Required_auths
     [follower], // Required Posting Auths

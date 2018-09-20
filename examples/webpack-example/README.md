@@ -1,5 +1,5 @@
-# `steem-js` webpack configuration example
-This is a demo of `steem-js` and webpack usage targetting both the Web and
+# `crea-js` webpack configuration example
+This is a demo of `crea-js` and webpack usage targetting both the Web and
 Node.js platforms.
 
 ## Compiling the example

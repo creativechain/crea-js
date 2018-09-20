@@ -6,15 +6,15 @@
 </head>
 <body>
 
-<script src="../dist/steem.min.js"></script>
+<script src="../dist/crea.min.js"></script>
 <script>
-steem.api.getConfig(function(err, response){
+crea.api.getConfig(function(err, response){
   console.log(err, response);
 });
-steem.api.getAccounts(['ned', 'dan'], function(err, response){
+crea.api.getAccounts(['ned', 'dan'], function(err, response){
   console.log(err, response);
 });
-steem.api.getAccountCount(function(err, response){
+crea.api.getAccountCount(function(err, response){
   console.log(err, response);
 });
 </script>

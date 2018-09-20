@@ -1,9 +1,9 @@
-const steem = require('../lib');
+const crea = require('../lib');
 
 const username = 'guest123';
 const wif = '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
 
-steem
+crea
   .broadcast
   .vote(
     wif,

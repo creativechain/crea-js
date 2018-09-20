@@ -1,10 +1,10 @@
 {
   "transport": "http",
-  "websocket": "wss://gtg.steem.house:8090",
-  "uri": "https://api.steemit.com",
+  "websocket": "wss://gtg.crea.house:8090",
+  "uri": "https://api.creativechain.com",
   "url": "",
-  "dev_uri": "https://api.steemitdev.com",
-  "stage_uri": "https://api.steemitstage.com",
-  "address_prefix": "STM",
+  "dev_uri": "https://api.creativechaindev.com",
+  "stage_uri": "https://api.creativechainstage.com",
+  "address_prefix": "CREA",
   "chain_id": "0000000000000000000000000000000000000000000000000000000000000000"
 }
