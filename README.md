@@ -1,8 +1,8 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/creativechain/crea-js/blob/master/LICENSE)
-[![Steem.js channel on creativechain.chat](https://img.shields.io/badge/chat-creativechain.chat-1c56a4.svg)](https://creativechain.chat/channel/creajs)
+[![Crea.js channel on creativechain.chat](https://img.shields.io/badge/chat-creativechain.chat-1c56a4.svg)](https://creativechain.chat/channel/creajs)
 
-# Steem.js
-Steem.js the JavaScript API for Steem blockchain
+# Crea.js
+Crea.js the JavaScript API for Crea blockchain
 
 # Documentation
 
@@ -93,7 +93,7 @@ console.log(reputation);
 ```
 
 ## Contributions
-Patches are welcome! Contributors are listed in the package.json file. Please run the tests before opening a pull request and make sure that you are passing all of them. If you would like to contribute, but don't know what to work on, check the issues list or on Steemit Chat channel #creajs https://creativechain.chat/channel/creajs.
+Patches are welcome! Contributors are listed in the package.json file. Please run the tests before opening a pull request and make sure that you are passing all of them. If you would like to contribute, but don't know what to work on, check the issues list or on Crea Chat channel #creajs https://creativechain.chat/channel/creajs.
 
 ## Issues
 When you find issues, please report them!

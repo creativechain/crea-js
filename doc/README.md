@@ -595,7 +595,7 @@ crea.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, titl
 ```
 ### Comment Options
 ```
-crea.broadcast.commentOptions(wif, author, permlink, maxAcceptedPayout, percentSteemDollars, allowVotes, allowCurationRewards, extensions, function(err, result) {
+crea.broadcast.commentOptions(wif, author, permlink, maxAcceptedPayout, percentCreaDollars, allowVotes, allowCurationRewards, extensions, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -607,7 +607,7 @@ crea.broadcast.commentPayout(wif, author, permlink, payout, function(err, result
 ```
 ### Comment Reward
 ```
-crea.broadcast.commentReward(wif, author, permlink, sbdPayout, vestingPayout, function(err, result) {
+crea.broadcast.commentReward(wif, author, permlink, cbdPayout, vestingPayout, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -655,13 +655,13 @@ crea.broadcast.escrowDispute(wif, from, to, agent, who, escrowId, function(err, 
 ```
 ### Escrow Release
 ```
-crea.broadcast.escrowRelease(wif, from, to, agent, who, receiver, escrowId, sbdAmount, creaAmount, function(err, result) {
+crea.broadcast.escrowRelease(wif, from, to, agent, who, receiver, escrowId, cbdAmount, creaAmount, function(err, result) {
   console.log(err, result);
 });
 ```
 ### Escrow Transfer
 ```
-crea.broadcast.escrowTransfer(wif, from, to, agent, escrowId, sbdAmount, creaAmount, fee, ratificationDeadline, escrowExpiration, jsonMeta, function(err, result) {
+crea.broadcast.escrowTransfer(wif, from, to, agent, escrowId, cbdAmount, creaAmount, fee, ratificationDeadline, escrowExpiration, jsonMeta, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -929,9 +929,9 @@ console.log(reputation);
 // => 56
 ```
 
-### Vest To Steem
+### Vest To Crea
 ```
-var creaPower = crea.formatter.vestToSteem(vestingShares, totalVestingShares, totalVestingFundSteem);
+var creaPower = crea.formatter.vestToCrea(vestingShares, totalVestingShares, totalVestingFundCrea);
 console.log(creaPower);
 ```
 

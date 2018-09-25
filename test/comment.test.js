@@ -26,7 +26,7 @@ describe('crea.broadcast:', () => {
             author: username,
             permlink,
             title: 'Test',
-            body: `This is a test using Steem.js v${pkg.version}.`,
+            body: `This is a test using Crea.js v${pkg.version}.`,
             json_metadata : JSON.stringify({
               tags: ['test'],
               app: `creajs/${pkg.version}`

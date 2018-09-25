@@ -6,7 +6,7 @@ module.exports = creaAPI => {
     return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  function vestingSteem(account, gprops) {
+  function vestingCrea(account, gprops) {
     const vests = parseFloat(account.vesting_shares.split(" ")[0]);
     const total_vests = parseFloat(gprops.total_vesting_shares.split(" ")[0]);
     const total_vest_crea = parseFloat(
@@ -17,7 +17,7 @@ module.exports = creaAPI => {
   }
 
   function processOrders(open_orders, assetPrecision) {
-    const sbdOrders = !open_orders
+    const cbdOrders = !open_orders
       ? 0
       : open_orders.reduce((o, order) => {
           if (order.sell_price.base.indexOf("CBD") !== -1) {
@@ -35,20 +35,20 @@ module.exports = creaAPI => {
           return o;
         }, 0) / assetPrecision;
 
-    return { creaOrders, sbdOrders };
+    return { creaOrders, cbdOrders };
   }
 
   function calculateSaving(savings_withdraws) {
     let savings_pending = 0;
-    let savings_sbd_pending = 0;
+    let savings_cbd_pending = 0;
     savings_withdraws.forEach(withdraw => {
       const [amount, asset] = withdraw.amount.split(" ");
       if (asset === "CREA") savings_pending += parseFloat(amount);
       else {
-        if (asset === "CBD") savings_sbd_pending += parseFloat(amount);
+        if (asset === "CBD") savings_cbd_pending += parseFloat(amount);
       }
     });
-    return { savings_pending, savings_sbd_pending };
+    return { savings_pending, savings_cbd_pending };
   }
 
   function estimateAccountValue(
@@ -66,11 +66,11 @@ module.exports = creaAPI => {
           creaAPI.getStateAsync(`/@{username}`).then(data => {
             gprops = data.props;
             feed_price = data.feed_price;
-            vesting_crea = vestingSteem(account, gprops);
+            vesting_crea = vestingCrea(account, gprops);
           })
         );
       } else {
-        vesting_crea = vestingSteem(account, gprops);
+        vesting_crea = vestingCrea(account, gprops);
       }
     }
 
@@ -102,11 +102,11 @@ module.exports = creaAPI => {
       if (/ CBD$/.test(base) && / CREA$/.test(quote))
         price_per_crea = parseFloat(base.split(" ")[0]);
       const savings_balance = account.savings_balance;
-      const savings_sbd_balance = account.savings_sbd_balance;
+      const savings_cbd_balance = account.savings_cbd_balance;
       const balance_crea = parseFloat(account.balance.split(" ")[0]);
       const saving_balance_crea = parseFloat(savings_balance.split(" ")[0]);
-      const sbd_balance = parseFloat(account.sbd_balance);
-      const sbd_balance_savings = parseFloat(savings_sbd_balance.split(" ")[0]);
+      const cbd_balance = parseFloat(account.cbd_balance);
+      const cbd_balance_savings = parseFloat(savings_cbd_balance.split(" ")[0]);
 
       let conversionValue = 0;
       const currentTime = new Date().getTime();
@@ -123,11 +123,11 @@ module.exports = creaAPI => {
         conversionValue += amount;
       }, []);
 
-      const total_sbd =
-        sbd_balance +
-        sbd_balance_savings +
-        savings.savings_sbd_pending +
-        orders.sbdOrders +
+      const total_cbd =
+        cbd_balance +
+        cbd_balance_savings +
+        savings.savings_cbd_pending +
+        orders.cbdOrders +
         conversionValue;
 
       const total_crea =
@@ -137,7 +137,7 @@ module.exports = creaAPI => {
         savings.savings_pending +
         orders.creaOrders;
 
-      return (total_crea * price_per_crea + total_sbd).toFixed(2);
+      return (total_crea * price_per_crea + total_cbd).toFixed(2);
     });
   }
 
@@ -167,13 +167,13 @@ module.exports = creaAPI => {
       return out;
     },
 
-    vestToSteem: function(
+    vestToCrea: function(
       vestingShares,
       totalVestingShares,
-      totalVestingFundSteem
+      totalVestingFundCrea
     ) {
       return (
-        parseFloat(totalVestingFundSteem) *
+        parseFloat(totalVestingFundCrea) *
         (parseFloat(vestingShares) / parseFloat(totalVestingShares))
       );
     },
@@ -191,7 +191,7 @@ module.exports = creaAPI => {
       return amount.toFixed(3) + " " + asset;
     },
     numberWithCommas,
-    vestingSteem,
+    vestingCrea,
     estimateAccountValue,
     createSuggestedPassword
   };

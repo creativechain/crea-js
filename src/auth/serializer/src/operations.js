@@ -273,7 +273,7 @@ let chain_properties = new Serializer(
     "chain_properties", {
     account_creation_fee: asset,
     maximum_block_size: uint32,
-    sbd_interest_rate: uint16
+    cbd_interest_rate: uint16
 }
 );
 
@@ -428,7 +428,7 @@ let escrow_transfer = new Serializer(
     "escrow_transfer", {
     from: string,
     to: string,
-    sbd_amount: asset,
+    cbd_amount: asset,
     crea_amount: asset,
     escrow_id: uint32,
     agent: string,
@@ -457,7 +457,7 @@ let escrow_release = new Serializer(
     who: string,
     receiver: string,
     escrow_id: uint32,
-    sbd_amount: asset,
+    cbd_amount: asset,
     crea_amount: asset
 }
 );
@@ -570,7 +570,7 @@ let claim_reward_balance = new Serializer(
     "claim_reward_balance", {
     account: string,
     reward_crea: asset,
-    reward_sbd: asset,
+    reward_cbd: asset,
     reward_vests: asset
 }
 );
@@ -611,7 +611,7 @@ let author_reward = new Serializer(
     "author_reward", {
     author: string,
     permlink: string,
-    sbd_payout: asset,
+    cbd_payout: asset,
     crea_payout: asset,
     vesting_payout: asset
 }

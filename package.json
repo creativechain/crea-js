@@ -1,7 +1,7 @@
 {
   "name": "@creativechain/crea-js",
   "version": "0.7.2",
-  "description": "Steem.js the JavaScript API for Steem blockchain",
+  "description": "Crea.js the JavaScript API for Crea blockchain",
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint --quiet src test; mocha -t 40000 --require babel-polyfill --require babel-register",

@@ -280,7 +280,7 @@ module.exports = [
       "to",
       "agent",
       "escrow_id",
-      "sbd_amount",
+      "cbd_amount",
       "crea_amount",
       "fee",
       "ratification_deadline",
@@ -309,7 +309,7 @@ module.exports = [
       "who",
       "receiver",
       "escrow_id",
-      "sbd_amount",
+      "cbd_amount",
       "crea_amount"
     ]
   },
@@ -402,7 +402,7 @@ module.exports = [
     "params": [
       "account",
       "reward_crea",
-      "reward_sbd",
+      "reward_cbd",
       "reward_vests"
     ]
   },

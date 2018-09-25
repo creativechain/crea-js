@@ -62,7 +62,7 @@ export default class WsTransport extends Transport {
   }
 
   send(api, data, callback) {
-    debug('Steem::send', api, data);
+    debug('Crea::send', api, data);
     return this.start().then(() => {
       const deferral = {};
       new Promise((resolve, reject) => {
@@ -114,7 +114,7 @@ export default class WsTransport extends Transport {
 
   onMessage(websocketMessage) {
     const message = JSON.parse(websocketMessage.data);
-    debug('-- Steem.onMessage -->', message.id);
+    debug('-- Crea.onMessage -->', message.id);
     if (!this._requests.has(message.id)) {
       throw new Error(`Panic: no request in queue for message id ${message.id}`);
     }

@@ -19,7 +19,7 @@ import {
     sign as signRequest
 } from '@steemit/rpc-auth';
 
-class Steem extends EventEmitter {
+class Crea extends EventEmitter {
     constructor(options = {}) {
         super(options);
         this._setTransport(options);
@@ -343,6 +343,6 @@ class Steem extends EventEmitter {
 }
 
 // Export singleton instance
-const crea = new Steem(config);
+const crea = new Crea(config);
 exports = module.exports = crea;
-exports.Steem = Steem;
+exports.Crea = Crea;
