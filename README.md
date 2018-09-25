@@ -1,5 +1,4 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/creativechain/crea-js/blob/master/LICENSE)
-[![Crea.js channel on creativechain.chat](https://img.shields.io/badge/chat-creativechain.chat-1c56a4.svg)](https://creativechain.chat/channel/creajs)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/creativechain/crea-js/blob/master/LICENSE)
 
 # Crea.js
 Crea.js the JavaScript API for Crea blockchain
