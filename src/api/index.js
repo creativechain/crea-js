@@ -31,9 +31,13 @@ class Crea extends EventEmitter {
             const methodParams = method.params || [];
 
             this[`${methodName}With`] = (options, callback) => {
+              let params = options;
+              if (method.api.indexOf('condenser') >= 0) {
+                params = methodParams.map(param => options[param]);
+              }
                 return this.send(method.api, {
                     method: method.method,
-                    params: methodParams.map(param => options[param])
+                    params: params
                 }, callback);
             };
 

@@ -46,8 +46,8 @@ export default class HttpTransport extends Transport {
     }
     debug('Crea::send', api, data);
     const id = data.id || this.id++;
-    const params = [api, data.method, data.params];
-    jsonRpc(this.options.uri, {method: 'call', id, params})
+    const params = data.params;
+    jsonRpc(this.options.uri, {method: api + '.' + data.method, id, params})
       .then(res => { callback(null, res) }, err => { callback(err) })
   }
 }
