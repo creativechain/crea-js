@@ -76,7 +76,6 @@ class Signature {
         private_key = toPrivateObj(private_key)
         assert(private_key, 'private_key required')
 
-      console.log('PrivateKey:', p, 'Generated', private_key.toWif(), 'Hash:', buf_sha256.toString('hex'));
         var der, e, ecsignature, i, lenR, lenS, nonce;
         i = null;
         nonce = 0;
