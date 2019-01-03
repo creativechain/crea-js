@@ -19,7 +19,17 @@ module.exports = [
       "permlink",
       "title",
       "body",
+      "download",
       "json_metadata"
+    ]
+  },
+  {
+    "roles": ["posting"],
+    "operation": "comment_download",
+    "params": [
+      "downloader",
+      "comment_author",
+      "comment_permlink"
     ]
   },
   {

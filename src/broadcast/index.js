@@ -91,9 +91,8 @@ operations.forEach((operation) => {
         operations: [[operation.operation, Object.assign(
           {},
           options,
-          options.json_metadata != null ? {
-            json_metadata: toString(options.json_metadata),
-          } : {},
+          options.json_metadata != null ? { json_metadata: toString(options.json_metadata), } : {},
+          options.download != null ? { download: toString(options.download), } : {},
           useCommentPermlink && options.permlink == null ? {
             permlink: formatter.commentPermlink(options.parent_author, options.parent_permlink),
           } : {}

@@ -1,3 +1,7 @@
+var Signature = require('./auth/ecc/src/signature');
+var operations = require('./auth/serializer/src/operations');
+var hash = require('./auth/ecc/src/hash');
+
 const snakeCaseRe = /_([a-z])/g;
 export function camelCase(str) {
   return str.replace(snakeCaseRe, function(_m, l) {
@@ -42,4 +46,8 @@ export function validateAccountName(value) {
     }
   }
   return null;
+}
+
+export {
+  Signature, operations, hash
 }

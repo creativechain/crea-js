@@ -63,18 +63,20 @@ class Signature {
         var _hash = hash.sha256(buf);
         return Signature.signBufferSha256(_hash, private_key)
     }
-    
+
     /** Sign a buffer of exactally 32 bytes in size (sha256(text))
         @param {Buffer} buf - 32 bytes binary
         @param {PrivateKey} private_key
         @return {Signature}
     */
     static signBufferSha256(buf_sha256, private_key) {
+      let p = private_key;
         if( buf_sha256.length !== 32 || ! Buffer.isBuffer(buf_sha256) )
             throw new Error("buf_sha256: 32 byte buffer requred")
         private_key = toPrivateObj(private_key)
         assert(private_key, 'private_key required')
 
+      console.log('PrivateKey:', p, 'Generated', private_key.toWif(), 'Hash:', buf_sha256.toString('hex'));
         var der, e, ecsignature, i, lenR, lenS, nonce;
         i = null;
         nonce = 0;

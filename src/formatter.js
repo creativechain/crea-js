@@ -141,10 +141,16 @@ module.exports = creaAPI => {
     });
   }
 
-  function createSuggestedPassword() {
+  function createSuggestedPassword(short = false) {
     const PASSWORD_LENGTH = 32;
     const privateKey = key_utils.get_random_key();
-    return privateKey.toWif().substring(3, 3 + PASSWORD_LENGTH);
+
+    const wif = privateKey.toWif();
+    if (short) {
+      return wif.substring(3, 3 + PASSWORD_LENGTH);
+    }
+
+    return wif;
   }
 
   return {

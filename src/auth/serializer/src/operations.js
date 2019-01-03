@@ -169,8 +169,17 @@ let comment = new Serializer(
     permlink: string,
     title: string,
     body: string,
+    download: string,
     json_metadata: string
 }
+);
+
+let comment_download = new Serializer(
+    "comment_download", {
+      downloader: string,
+      comment_author: string,
+      comment_permlink: string,
+    }
 );
 
 let transfer = new Serializer(
@@ -714,6 +723,7 @@ let comment_benefactor_reward = new Serializer(
 operation.st_operations = [
     vote,
     comment,
+    comment_download,
     transfer,
     transfer_to_vesting,
     withdraw_vesting,

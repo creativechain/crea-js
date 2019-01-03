@@ -40,6 +40,11 @@ export default [
     },
     {
       "api": "tags_api",
+      "method": "get_discussion",
+      "params": ["author", "permlink"]
+    },
+    {
+      "api": "tags_api",
       "method": "get_discussions_by_trending",
       "params": ["query"]
     },
@@ -122,6 +127,11 @@ export default [
       "api": "condenser_api",
       "method": "get_state",
       "params": ["path"]
+    },
+  {
+      "api": "condenser_api",
+      "method": "get_download",
+      "params": ["downloader", "comment_author", "comment_permlink", "signature"]
     },
     {
       "api": "database_api",
