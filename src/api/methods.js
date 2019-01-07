@@ -315,7 +315,7 @@ export default [
       "params": ["voter"]
     },
     {
-      "api": "codnenser_api",
+      "api": "condenser_api",
       "method": "get_content",
       "params": ["author", "permlink"]
     },
