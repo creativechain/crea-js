@@ -1,8 +1,5 @@
 {
-  "transport": "http",
-  "websocket": "wss://gtg.crea.house:8090",
-  "uri": "https://api.creativechain.com",
-  "url": "",
+  "nodes": ["https://node1.creary.net", "https://crea.owldevelopers.site"],
   "dev_uri": "https://api.creativechaindev.com",
   "stage_uri": "https://api.creativechainstage.com",
   "address_prefix": "CREA",

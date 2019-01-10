@@ -58,38 +58,42 @@ class Crea extends EventEmitter {
     }
 
     _setTransport(options) {
-        if (options.url && options.url.match('^((http|https)?:\/\/)')) {
-            options.uri = options.url;
+        if (options.nodes.length) {
+          const node = options.nodes[0];
+          if (node.match('^((http|https)?:\/\/)')) {
             options.transport = 'http';
             this._transportType = options.transport;
             this.options = options;
             this.transport = new transports.http(options);
-        } else if (options.url && options.url.match('^((ws|wss)?:\/\/)')) {
-            options.websocket = options.url;
+          } else if (node.match('^((ws|wss)?:\/\/)')) {
             options.transport = 'ws';
             this._transportType = options.transport;
             this.options = options;
             this.transport = new transports.ws(options);
-        } else if (options.transport) {
+          } else if (options.transport) {
             if (this.transport && this._transportType !== options.transport) {
-                this.transport.stop();
+              this.transport.stop();
             }
 
             this._transportType = options.transport;
 
             if (typeof options.transport === 'string') {
-                if (!transports[options.transport]) {
-                    throw new TypeError(
-                        'Invalid `transport`, valid values are `http`, `ws` or a class',
-                    );
-                }
-                this.transport = new transports[options.transport](options);
+              if (!transports[options.transport]) {
+                throw new TypeError(
+                  'Invalid `transport`, valid values are `http`, `ws` or a class',
+                );
+              }
+              this.transport = new transports[options.transport](options);
             } else {
-                this.transport = new options.transport(options);
+              this.transport = new options.transport(options);
             }
-        } else {
+          } else {
             this.transport = new transports.ws(options);
+          }
+        } else {
+          throw new Error('No configured nodes');
         }
+
     }
 
     _setLogger(options) {

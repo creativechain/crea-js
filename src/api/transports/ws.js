@@ -31,18 +31,27 @@ export default class WsTransport extends Transport {
     }
 
     this.startPromise = new Promise((resolve, reject) => {
-      this.ws = new WebSocket(this.options.websocket);
-      this.ws.onerror = (err) => {
-        this.startPromise = null;
-        reject(err);
-      };
-      this.ws.onopen = () => {
-        this.isOpen = true;
-        this.ws.onerror = this.onError.bind(this);
-        this.ws.onmessage = this.onMessage.bind(this);
-        this.ws.onclose = this.onClose.bind(this);
-        resolve();
-      };
+      if (this.options.length) {
+        const MAX = this.options.nodes.length - 1;
+        const nodeId = Math.floor(Math.random() * (MAX - 0 + 1)) + 0;
+        const ws = this.options.nodes[nodeId];
+
+        this.ws = new WebSocket(ws);
+        this.ws.onerror = (err) => {
+          this.startPromise = null;
+          reject(err);
+        };
+        this.ws.onopen = () => {
+          this.isOpen = true;
+          this.ws.onerror = this.onError.bind(this);
+          this.ws.onmessage = this.onMessage.bind(this);
+          this.ws.onclose = this.onClose.bind(this);
+          resolve();
+        };
+      } else {
+        reject(new Error('No configured nodes'));
+      }
+
     });
     return this.startPromise;
   }

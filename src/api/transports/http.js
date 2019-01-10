@@ -47,7 +47,17 @@ export default class HttpTransport extends Transport {
     debug('Crea::send', api, data);
     const id = data.id || this.id++;
     const params = data.params;
-    jsonRpc(this.options.uri, {method: api + '.' + data.method, id, params})
-      .then(res => { callback(null, res) }, err => { callback(err) })
+
+    if (this.options.nodes.length) {
+      const MAX = this.options.nodes.length - 1;
+      const nodeId = Math.floor(Math.random() * (MAX - 0 + 1)) + 0;
+      const uri = this.options.nodes[nodeId];
+
+      jsonRpc(uri, {method: api + '.' + data.method, id, params})
+        .then(res => { callback(null, res) }, err => { callback(err) })
+    } else {
+      throw new Error('No configured nodes');
+    }
+
   }
 }
