@@ -46,67 +46,67 @@ export default [
     {
       "api": "tags_api",
       "method": "get_discussions_by_trending",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "database_api",
       "method": "get_discussions_by_trending30",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_created",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_active",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_cashout",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "database_api",
       "method": "get_discussions_by_payout",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_votes",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_children",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_hot",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_feed",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_blog",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_comments",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_promoted",
-      "params": ["query"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "condenser_api",

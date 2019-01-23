@@ -63,7 +63,7 @@ module.exports = creaAPI => {
     if (!vesting_crea || !feed_price) {
       if (!gprops || !feed_price) {
         promises.push(
-          creaAPI.getStateAsync(`/@{username}`).then(data => {
+          creaAPI.getStateAsync('/@' + username).then(data => {
             gprops = data.props;
             feed_price = data.feed_price;
             vesting_crea = vestingCrea(account, gprops);
