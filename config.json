@@ -1,6 +1,6 @@
 {
-  "nodes": ["https://node1.creary.net", "https://crea.owldevelopers.site"],
-  "dev_uri": "https://api.creativechaindev.com",
+  "nodes": ["https://node1.creary.net"],
+  "dev_uri": "https://dev.creaproject.io",
   "stage_uri": "https://api.creativechainstage.com",
   "address_prefix": "CREA",
   "chain_id": "0000000000000000000000000000000000000000000000000000000000000000"

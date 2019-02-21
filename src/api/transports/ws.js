@@ -31,9 +31,9 @@ export default class WsTransport extends Transport {
     }
 
     this.startPromise = new Promise((resolve, reject) => {
-      if (this.options.length) {
+      if (this.options) {
         const MAX = this.options.nodes.length - 1;
-        const nodeId = Math.floor(Math.random() * (MAX - 0 + 1)) + 0;
+        const nodeId = Math.floor(Math.random() * (MAX + 1));
         const ws = this.options.nodes[nodeId];
 
         this.ws = new WebSocket(ws);
