@@ -6,6 +6,9 @@ let apiOptions = {
 
 crea.api.setOptions(apiOptions);
 
-crea.api.getDynamicGlobalProperties(function (err, result) {
-  console.log(err, result)
+crea.api.getState('/@crea', function (err, result) {
+  console.log(err, result);
 })
+
+
+
