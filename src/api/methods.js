@@ -20,7 +20,7 @@ export default [
     },
     {
       "api": "tags_api",
-      "method": "get_trending_tags",
+      "method": "get_popular_tags",
       "params": ["afterTag", "limit"]
     },
     {
@@ -45,17 +45,17 @@ export default [
     },
     {
       "api": "tags_api",
-      "method": "get_discussions_by_trending",
+      "method": "get_discussions_by_popular",
       "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "database_api",
-      "method": "get_discussions_by_trending30",
+      "method": "get_discussions_by_popular30",
       "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "tags_api",
-      "method": "get_discussions_by_created",
+      "method": "get_discussions_by_now",
       "params": ["start_author", "start_permlink", "limit"]
     },
     {
@@ -85,7 +85,7 @@ export default [
     },
     {
       "api": "tags_api",
-      "method": "get_discussions_by_hot",
+      "method": "get_discussions_by_skyrockets",
       "params": ["start_author", "start_permlink", "limit"]
     },
     {
@@ -135,7 +135,7 @@ export default [
     },
     {
       "api": "database_api",
-      "method": "get_trending_categories",
+      "method": "get_popular_categories",
       "params": ["after", "limit"]
     },
     {
