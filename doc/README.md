@@ -92,21 +92,21 @@ crea.api.cancelAllSubscriptions(function(err, result) {
 
 ## Tags
 
-### Get Trending Tags
+### Get Popular Tags
 ```
-crea.api.getTrendingTags(afterTag, limit, function(err, result) {
+crea.api.getPopularTags(afterTag, limit, function(err, result) {
   console.log(err, result);
 });
 ```
-### Get Discussions By Trending
+### Get Discussions By Popular
 ```
-crea.api.getDiscussionsByTrending(query, function(err, result) {
+crea.api.getDiscussionsByPopular(query, function(err, result) {
   console.log(err, result);
 });
 ```
-### Get Discussions By Created
+### Get Discussions By Now
 ```
-crea.api.getDiscussionsByCreated(query, function(err, result) {
+crea.api.getDiscussionsByNow(query, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -140,9 +140,9 @@ crea.api.getDiscussionsByChildren(query, function(err, result) {
   console.log(err, result);
 });
 ```
-### Get Discussions By Hot
+### Get Discussions By Skyrockets
 ```
-crea.api.getDiscussionsByHot(query, function(err, result) {
+crea.api.getDiscussionsBySkyrockets(query, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -185,9 +185,9 @@ crea.api.getState(path, function(err, result) {
   console.log(err, result);
 });
 ```
-### Get Trending Categories
+### Get Popular Categories
 ```
-crea.api.getTrendingCategories(after, limit, function(err, result) {
+crea.api.getPopularCategories(after, limit, function(err, result) {
   console.log(err, result);
 });
 ```
