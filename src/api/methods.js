@@ -272,7 +272,7 @@ export default [
     {
       "api": "database_api",
       "method": "get_liquidity_queue",
-      "params": ["startAccount", "limit"]
+      "params": ["start_account", "limit"]
     },
     {
       "api": "database_api",
@@ -327,12 +327,12 @@ export default [
     {
       "api": "tags_api",
       "method": "get_discussions_by_author_before_date",
-      "params": ["author", "startPermlink", "beforeDate", "limit"]
+      "params": ["author", "start_permlink", "before_date", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_replies_by_last_update",
-      "params": ["startAuthor", "startPermlink", "limit"]
+      "params": ["start_author", "start_permlink", "limit"]
     },
     {
       "api": "condenser_api",
