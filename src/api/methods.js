@@ -260,7 +260,7 @@ export default [
       "params": ["account"]
     },
     {
-      "api": "database_api",
+      "api": "condenser_api",
       "method": "get_order_book",
       "params": ["limit"]
     },
