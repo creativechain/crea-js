@@ -154,23 +154,31 @@ module.exports = creaAPI => {
   }
 
   return {
-    reputation: function(reputation) {
-      if (reputation == null) return reputation;
-      reputation = parseInt(reputation);
-      let rep = String(reputation);
-      const neg = rep.charAt(0) === "-";
-      rep = neg ? rep.substring(1) : rep;
-      const str = rep;
-      const leadingDigits = parseInt(str.substring(0, 4));
-      const log = Math.log(leadingDigits) / Math.log(10);
-      const n = str.length - 1;
-      let out = n + (log - parseInt(log));
-      if (isNaN(out)) out = 0;
-      out = Math.max(out - 9, 0);
-      out = (neg ? -1 : 1) * out;
-      out = out * 9 + 25;
-      out = parseInt(out);
-      return out;
+    reputation: function(reputation, maxLevel, maxLogNum) {
+      if (reputation == null) {
+        return reputation;
+      }
+
+      if (reputation === 0) {
+        return {
+          raw: reputation,
+          level: 1,
+          formatted: 0
+        }
+      } else {
+        const neg = reputation < 0;
+        reputation = Math.abs(reputation);
+        const log10 = Math.log10(reputation);
+        const rawLevel = log10 * maxLevel / maxLogNum;
+        const level = rawLevel > 0 && rawLevel <= 1 ? 1 : Math.floor(rawLevel * (neg ? -1 : 1));
+        const rep = Math.floor(rawLevel * 10 * (neg ? -1 : 1));
+
+        return {
+          raw: reputation * (neg ? -1 : 1),
+          level: Math.min(level, maxLevel),
+          formatted: rep
+        }
+      }
     },
 
     vestToCrea: function(

@@ -6,10 +6,10 @@
   "scripts": {
     "test": "eslint --quiet src test; mocha -t 40000 --require babel-polyfill --require babel-register",
     "test-auth": "npm test -- --grep 'crea.auth'",
-    "build": "npm run build-browser && npm run build-node",
+    "build": "npm run build-browser && npm run build-web",
     "build-browser": "rm -rf dist && NODE_ENV=production node ./node_modules/webpack/bin/webpack.js && gzip -k -f ./dist/*.js && du -h ./dist/*",
     "build-node": "mkdir -p ./lib && cp -r ./src/* ./lib/ && babel ./src --out-dir ./lib",
-    "build-web": "mkdir -p ./dist && rm -rf ./lib && npm run build-node && browserify ./lib/browser.js -o ./dist/crea.js ",
+    "build-web": "mkdir -p ./dist && rm -rf ./lib && npm run build-node && browserify ./lib/browser.js -o ./dist/crea.js && terser -c -m --output ./dist/crea-web.min.js ./dist/crea.js",
     "prepublish": "npm run build",
     "test-ws": "node test/ws.js"
   },
@@ -61,6 +61,7 @@
     "babel-preset-es2017": "^6.16.0",
     "babel-register": "^6.14.0",
     "bluebird": "^3.4.6",
+    "browserify": "^16.2.3",
     "eslint": "^3.5.0",
     "eslint-plugin-import": "^1.15.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
@@ -69,6 +70,7 @@
     "mocha": "^3.0.2",
     "mocha-make-stub": "^2.3.2",
     "should": "^11.1.0",
+    "terser": "^4.0.0",
     "webpack": "^1.13.2",
     "webpack-visualizer-plugin": "^0.1.5"
   },

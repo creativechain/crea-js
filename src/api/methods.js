@@ -96,7 +96,7 @@ export default [
     {
       "api": "tags_api",
       "method": "get_discussions_by_blog",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["select_author", "start_permlink", "limit", "tag"]
     },
     {
       "api": "tags_api",
@@ -327,7 +327,7 @@ export default [
     {
       "api": "tags_api",
       "method": "get_discussions_by_author_before_date",
-      "params": ["author", "start_permlink", "before_date", "limit"]
+      "params": ["author", "start_permlink", "before_date", "limit", "order"]
     },
     {
       "api": "tags_api",
