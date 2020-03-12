@@ -166,15 +166,15 @@ module.exports = creaAPI => {
           formatted: 0
         }
       } else {
-        const neg = reputation < 0;
+        const neg = reputation < 0 ? -1 : 1;
         reputation = Math.abs(reputation);
         const log10 = Math.log10(reputation);
-        const rawLevel = log10 * maxLevel / maxLogNum;
-        const level = rawLevel > 0 && rawLevel <= 1 ? 1 : Math.floor(rawLevel * (neg ? -1 : 1));
-        const rep = Math.floor(rawLevel * 10 * (neg ? -1 : 1));
+        const rawLevel = (log10 * maxLevel / maxLogNum) * 1.15;
+        const level = rawLevel > 0 && rawLevel <= 1 ? 1 : Math.floor(rawLevel * neg);
+        const rep = Math.floor(rawLevel * 10 * neg);
 
         return {
-          raw: reputation * (neg ? -1 : 1),
+          raw: reputation * neg,
           level: Math.min(level, maxLevel),
           formatted: rep
         }
