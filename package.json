@@ -1,6 +1,6 @@
 {
   "name": "@creativechain-fdn/crea-js",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Crea.js the JavaScript API for Crea blockchain",
   "main": "lib/index.js",
   "scripts": {
