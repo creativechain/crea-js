@@ -46,67 +46,67 @@ export default [
     {
       "api": "tags_api",
       "method": "get_discussions_by_popular",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "database_api",
       "method": "get_discussions_by_popular30",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_now",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_active",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_cashout",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "database_api",
       "method": "get_discussions_by_payout",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_votes",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_children",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_skyrockets",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_feed",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_blog",
-      "params": ["select_author", "start_permlink", "limit", "tag"]
+      "params": ["select_author", "start_permlink", "tag", "limit", "tag"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_comments",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "tags_api",
       "method": "get_discussions_by_promoted",
-      "params": ["start_author", "start_permlink", "limit"]
+      "params": ["start_author", "start_permlink", "tag", "limit"]
     },
     {
       "api": "condenser_api",
