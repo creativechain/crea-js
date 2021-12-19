@@ -6,7 +6,7 @@ let apiOptions = {
 
 crea.api.setOptions(apiOptions);
 
-crea.api.getState('/@crea', function (err, result) {
+crea.api.findRcAccounts(['ander7agar'], function (err, result) {
   console.log(err, result);
 })
 
