@@ -1,12 +1,12 @@
 {
   "name": "@creativechain-fdn/crea-js",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Crea.js the JavaScript API for Crea blockchain",
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint --quiet src test; mocha -t 40000 --require babel-polyfill --require babel-register",
     "test-auth": "npm test -- --grep 'crea.auth'",
-    "build": "npm run build-browser && npm run build-web",
+    "build": "npm run build-browser && npm run build-web && npm run build-node",
     "build-browser": "rm -rf dist && NODE_ENV=production node ./node_modules/webpack/bin/webpack.js && gzip -k -f ./dist/*.js && du -h ./dist/*",
     "build-node": "mkdir -p ./lib && cp -r ./src/* ./lib/ && babel ./src --out-dir ./lib",
     "build-web": "mkdir -p ./dist && rm -rf ./lib && npm run build-node && browserify ./lib/browser.js -o ./dist/crea.js && terser -c -m --output ./dist/crea-web.min.js ./dist/crea.js",
@@ -62,7 +62,7 @@
     "babel-register": "^6.14.0",
     "bluebird": "^3.4.6",
     "browserify": "^16.2.3",
-    "eslint": "^3.5.0",
+    "eslint": "^4.18.2",
     "eslint-plugin-import": "^1.15.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.1",

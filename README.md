@@ -1,6 +1,8 @@
-[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/creativechain/crea-js/blob/master/LICENSE)
-
 # Crea.js
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/creativechain/crea-js/blob/master/LICENSE)
+![Version](https://img.shields.io/npm/v/@creativechain-fdn/crea-js.svg?style=flat&logo=npm)
+![Downloads](https://img.shields.io/npm/dm/@creativechain-fdn/crea-js)
+
 Crea.js the JavaScript API for Crea blockchain
 
 # Documentation
@@ -40,12 +42,6 @@ crea.api.getAccounts(['ned', 'dan'], function(err, response){
 </script>
 ```
 
-## CDN
-https://cdn.creajs.com/lib/latest/crea.min.js<br/>
-```html
-<script src="//cdn.creajs.com/lib/latest/crea.min.js"></script>
-```
-
 ## Webpack
 [Please have a look at the webpack usage example.](https://github.com/creativechain/crea-js/blob/master/examples/webpack-example)
 
@@ -56,9 +52,7 @@ $ npm install crea --save
 ```
 
 ## RPC Servers
-https://api.creativechain.com By Default<br/>
-https://node.crea.ws<br/>
-https://this.piston.rocks<br/>
+https://nodes.creary.net
 
 ## Examples
 ### Broadcast Vote
