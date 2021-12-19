@@ -501,5 +501,10 @@ export default [
       "api": "market_history_api",
       "method": "get_market_history_buckets",
       "params": []
-    }
+    },
+  {
+    "api": "rc_api",
+    "method": "find_rc_accounts",
+    "params": ['accounts']
+  }
 ];
